@@ -1,5 +1,19 @@
-import {connect, getStarknet} from "get-starknet";
+import {connect, disconnect, getStarknet} from "get-starknet";
 import {useEffect, useState} from "react";
+
+const defaultConnectedRender = ( {selectedAddress}, disconnectHandler ) => <>
+	<h5 className='white' title={selectedAddress}>
+		<span className="wallet">
+			{selectedAddress.substring( 0, 4 ) + '...' + selectedAddress.substring( selectedAddress.length - 5 )}
+		</span>
+		&nbsp;&nbsp;
+		<button onClick={disconnectHandler}>Disconnect</button>
+	</h5>
+</>;
+
+const defaultDisconnectedRender = ( connectClickHandler ) => <>
+	<button onClick={connectClickHandler}>Connect</button>
+</>;
 
 /**
  * Connects to a Starknet wallet
@@ -9,51 +23,37 @@ import {useEffect, useState} from "react";
  * @returns {*}
  * @constructor
  */
-const WalletConnect = ( {onConnectedStatusChange, connectedRender, disconnectedRender} ) => {
-	const [isConnected, setIsConnected] = useState( false );
-	const [wallet, setWallet] = useState( null );
+const WalletConnect = ( {onConnectedStatusChange, connectedRender = defaultConnectedRender, disconnectedRender = defaultDisconnectedRender} ) => {
+	const [connection, setConnection] = useState( {
+		status: false,
+		wallet: null
+	} );
 
-	const _onConnectedStatusChange = (
-		( status, wallet ) => {
-			onConnectedStatusChange && onConnectedStatusChange( status, wallet );
-			setIsConnected( status );
-			setWallet( wallet )
-		}
-	);
+	const connectWallet = ( showListModal  ) => {
+		connect( {showList: showListModal} ).then( wallet => {
+			wallet
+				?.enable( {showModal: showListModal} )
+				.then( () => _onConnectedStatusChange( wallet ) );
+		} );
+	};
 
-	connectedRender = connectedRender || (
-		({selectedAddress}) => {
-			return <h5 className='white' title={selectedAddress}>
-				{selectedAddress.substring( 0, 4 ) + '...' + selectedAddress.substring( selectedAddress.length - 5 )}
-			</h5>
-		}
-	);
+	const disconnectWallet = ( showListModal  ) => {
+		disconnect( {clearLastWallet: true, clearDefaultWallet: true} );
+		_onConnectedStatusChange( null )
+	};
 
-	disconnectedRender = disconnectedRender || (
-		(connectClickHandler) => {
-			return <button onClick={connectClickHandler}>Connect</button>
-		}
-	);
-
+	const _onConnectedStatusChange = ( wallet ) => {
+		onConnectedStatusChange && onConnectedStatusChange( !!wallet?.isConnected, wallet );
+		setConnection( {status: !!wallet?.isConnected, wallet} );
+	};
 
 	// silently attempt to connect with a pre-authorized wallet
-	useEffect( () => {
-		connect( {showList: false} ).then( wallet => {
-			wallet
-				?.enable( {showModal: false} )
-				.then( () => _onConnectedStatusChange( !!wallet?.isConnected, wallet ) );
-		} );
-	}, [] );
+	useEffect( () => connectWallet( false ), [] );
 
-	const connectClickHandler = () => {
-		connect( {showList: true} ).then( wallet => {
-			wallet
-				?.enable( {showModal: true} )
-				.then( () => _onConnectedStatusChange( !!wallet?.isConnected ) );
-		} );
-	}
+	const connectClickHandler = () => connectWallet( true );
+	const disconnectClickHandler = () => disconnectWallet( true );
 
-	return isConnected ? connectedRender( wallet ) : disconnectedRender( connectClickHandler );
+	return connection.status ? connectedRender( connection.wallet, disconnectClickHandler ) : disconnectedRender( connectClickHandler );
 };
 
 export default WalletConnect;
