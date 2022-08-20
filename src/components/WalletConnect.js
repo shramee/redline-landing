@@ -1,4 +1,4 @@
-import {connect, disconnect, getStarknet} from "get-starknet";
+import {connect, disconnect} from "get-starknet";
 import {useEffect, useState} from "react";
 
 const defaultConnectedRender = ( {selectedAddress}, disconnectHandler ) => <>
@@ -7,12 +7,12 @@ const defaultConnectedRender = ( {selectedAddress}, disconnectHandler ) => <>
 			{selectedAddress.substring( 0, 4 ) + '...' + selectedAddress.substring( selectedAddress.length - 5 )}
 		</span>
 		&nbsp;&nbsp;
-		<button onClick={disconnectHandler}>Disconnect</button>
+		{/*<button onClick={disconnectHandler}>Disconnect</button>*/}
 	</h5>
 </>;
 
 const defaultDisconnectedRender = ( connectClickHandler ) => <>
-	<button onClick={connectClickHandler}>Connect</button>
+	<button onClick={connectClickHandler}>Connect wallet</button>
 </>;
 
 /**
@@ -23,11 +23,21 @@ const defaultDisconnectedRender = ( connectClickHandler ) => <>
  * @returns {*}
  * @constructor
  */
-const WalletConnect = ( {onConnectedStatusChange, connectedRender = defaultConnectedRender, disconnectedRender = defaultDisconnectedRender} ) => {
+const WalletConnect = ( {
+	onConnectedStatusChange,
+	connectedRender = defaultConnectedRender,
+	disconnectedRender = defaultDisconnectedRender,
+	autoConnect = true,
+} ) => {
 	const [connection, setConnection] = useState( {
 		status: false,
 		wallet: null
 	} );
+
+	// silently attempt to connect with a pre-authorized wallet
+	useEffect( () => {
+		autoConnect && connectWallet( false )
+	}, [] );
 
 	const connectWallet = ( showListModal  ) => {
 		connect( {showList: showListModal} ).then( wallet => {
@@ -46,9 +56,6 @@ const WalletConnect = ( {onConnectedStatusChange, connectedRender = defaultConne
 		onConnectedStatusChange && onConnectedStatusChange( !!wallet?.isConnected, wallet );
 		setConnection( {status: !!wallet?.isConnected, wallet} );
 	};
-
-	// silently attempt to connect with a pre-authorized wallet
-	useEffect( () => connectWallet( false ), [] );
 
 	const connectClickHandler = () => connectWallet( true );
 	const disconnectClickHandler = () => disconnectWallet( true );
