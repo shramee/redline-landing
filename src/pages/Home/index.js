@@ -12,8 +12,8 @@ const Home = () => <article className="">
 			<div className="fl w-100 w-70-ns pr3 white">
 				<div className='pa1 b--white-10 ba mb4'>
 					<div className="aspect-ratio aspect-ratio--16x9">
-						{/*<iframe className="aspect-ratio--object cover" frameBorder="0" allowFullScreen scrolling="no"*/}
-						{/*				height="450" width="800" src={twitchURL}/>*/}
+						<iframe className="aspect-ratio--object cover" frameBorder="0" allowFullScreen scrolling="no"
+										height="450" width="800" src={twitchURL}/>
 					</div>
 				</div>
 				<section className="links dt">
@@ -43,7 +43,6 @@ const Home = () => <article className="">
 			</div>
 			<AppContext.Consumer>
 				{( {wallet, isConnected} ) => {
-					console.log( isConnected, wallet );
 					return <div className="fl w-100 w-30-ns">
 						{isConnected ?
 							<GameUI {...{wallet}} /> :
