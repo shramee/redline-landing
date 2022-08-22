@@ -1,5 +1,19 @@
-import {defaultSpacesInRace, raceContractAddress, robotsNFTsContractAddress} from "../conf";
+import {Contract} from "starknet";
+import {abi_raceContract, defaultSpacesInRace, raceContractAddress, robotsNFTsContractAddress} from "../conf";
 import dummyRobotNFTs from './mock/NFTAssets';
+let raceContractInstance;
+
+export const getRaceContractInstance = wallet => {
+	if ( !raceContractInstance ) {
+		raceContractInstance = new Contract(
+			abi_raceContract,
+			raceContractAddress,
+			wallet.account
+		);
+		window.raceCon = raceContractInstance;
+	}
+	return raceContractInstance;
+}
 
 export const
 	getRobots = ( walletAddress ) => {
@@ -26,9 +40,10 @@ export const getOpenRaceSlotsCount = wallet =>
 			return defaultSpacesInRace - result[0];
 		} );
 
-export const submitRobotToRace = ( wallet, robotId ) =>
-	callRaceContract( wallet, 'SubmitRobot', [robotId] )
-		.then( response => response )
+export const submitRobotToRace = ( wallet, robotId ) => {
+	return getRaceContractInstance( wallet )
+		.SubmitRobot( robotId, {max_fees: 0.000001} )
 		.catch( e => {
 			console.error( e )
 		} );
+}

@@ -7,7 +7,7 @@ const GameUI = ({wallet}) => {
 	const [ robotNFTs, setRobotNFT ] = useState( [] );
 	const [ robotsInRace, setRobotsInRace ] = useState( false );
 	const [ openRaceSlotsCount, setOpenRaceSlotsCount ] = useState( false );
-	const [ totalSpaces, setTotalSpaces ] = useState( defaultSpacesInRace );
+	const [ totalSpaces, ] = useState( defaultSpacesInRace );
 	const {selectedAddress} = wallet;
 
 	useEffect( () => {
@@ -17,6 +17,7 @@ const GameUI = ({wallet}) => {
 	useEffect( () => {
 		getOpenRaceSlotsCount( wallet ).then( ( num ) => setOpenRaceSlotsCount( num ) );
 		getRobotsInRace( wallet ).then( ( robots ) => setRobotsInRace( robots ) );
+
 //		wallet.provider.callContract( {
 //			contractAddress: raceContractAddress,
 //			entrypoint     : 'getRobotsInRaceCount',
@@ -25,13 +26,24 @@ const GameUI = ({wallet}) => {
 //		} );
 	}, [] );
 
-
-
-
 	const submitToRace = tokenId => {
-		submitRobotToRace( wallet, tokenId ).then( ( response ) => {
-			getRobotsInRace( wallet ).then( ( robots ) => setRobotsInRace( robots ) );
-		} );
+		return submitRobotToRace( wallet, tokenId ).then( ( response ) => {
+			if ( ! response ) {
+				alert( 'Oops, the transaction failed.' );
+			} else if ( response.code === "TRANSACTION_RECEIVED" ) {
+				getRobotsInRace( wallet ).then( ( robots ) => setRobotsInRace( robots ) );
+				return true;
+			} else {
+				console.error( response );
+				alert( 'Some error occurred, please let us know what happened!\n Error message: ' + response.code );
+			}
+
+			return false;
+		} )
+			.catch( e => {
+				console.error( e );
+				alert( 'Some error occurred, please let us know what happened!\n Error message: ' + e );
+			} );
 	};
 
 	return <>
