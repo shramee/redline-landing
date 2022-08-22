@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {getRobots, getRobotsInRace, getOpenRaceSlotsCount, submitRobotToRace} from '../../services/data';
-import {raceTrackImageURI, raceContractAddress, defaultSpacesInRace} from '../../conf';
+import {raceTrackImageURI, defaultSpacesInRace} from '../../conf';
 import Robot from './Robot';
 
 const GameUI = ({wallet}) => {
