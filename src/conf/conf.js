@@ -11,7 +11,7 @@ export const
 	sponsorLinks              = [
 		['isotropic', '#'],
 	],
-	raceTrackImageURI              = 'https://redline.game/a/t00.png';
+	raceTrackImageURI              = 'https://redline.game/a/t00.webp';
 
 export const
 	defaultSpacesInRace = 6;
