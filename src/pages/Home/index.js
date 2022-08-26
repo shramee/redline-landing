@@ -40,6 +40,9 @@ const Home = () => <article className="">
 						</div>
 					</nav>
 				</section>
+				<section className="notice pv3 f6">
+					Early Access game, not representative of the final experience
+				</section>
 			</div>
 			<AppContext.Consumer>
 				{( {wallet, isConnected} ) => {
