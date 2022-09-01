@@ -7,7 +7,7 @@ import AppContext from "../../app/AppContext";
 import GameUI from './GameUI';
 
 const Home = () => <article className="">
-	<div className="mw9 center">
+	<div className="center">
 		<div className="cf">
 			<div className="fl w-100 w-70-ns pr3 white">
 				<div className='pa1 b--white-10 ba mb4'>
