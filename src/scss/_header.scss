@@ -1,0 +1,28 @@
+.logo {
+	padding-top: .5em;
+	margin-right: 1em;
+}
+
+.logo a {
+	display: block;
+}
+
+#nav {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	a {
+		letter-spacing: .1em;
+		display: block;
+		text-decoration: none;
+		margin: 1em;
+		color: #fff;
+		text-transform: capitalize;
+	}
+
+	.btn {
+		margin: 0 0 0 auto;
+	}
+}
+
+

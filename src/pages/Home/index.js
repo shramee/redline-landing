@@ -1,66 +1,47 @@
-import {
-	twitchURL,
-	rewardsLinks,
-	sponsorLinks,
-} from "../../conf";
-import AppContext from "../../app/AppContext";
-import GameUI from './GameUI';
+import video from '../../assets/hero-bg.mp4';
+import Scene from '../../components/Scene';
 
-const Home = () => <article className="">
-	<div className="center">
-		<div className="cf">
-			<div className="fl w-100 w-70-ns pr3 white">
-				<div className='pa1 b--white-10 ba mb4'>
-					<div className="aspect-ratio aspect-ratio--16x9">
-						<iframe className="aspect-ratio--object cover" frameBorder="0" allowFullScreen scrolling="no"
-										height="450" width="800" src={twitchURL}/>
-					</div>
-				</div>
-				<section className="links dt">
-					<nav className="f6 fw6 tracked dt-row">
-						<h4 className='dtc ttu v-mid'>Rewards links:</h4>
-						<div className='dtc pa3'>
-							{
-								rewardsLinks.map(
-									( [text, url], i ) =>
-										<a key={i} className="link dim white dib ml4" href={url}>{text}</a>
-								)
-							}
-						</div>
-					</nav>
-					<nav className="f6 fw6 tracked dt-row">
-						<h4 className='dtc ttu'>Sponsors:</h4>
-						<div className='dtc pa3'>
-							{
-								sponsorLinks.map(
-									( [text, url], i ) =>
-										<a key={i} className="link f4 dim white dib ml4" href={url}>{text}</a>
-								)
-							}
-						</div>
-					</nav>
-				</section>
-				<section className="notice pv3 f6">
-					Early Access game, not representative of the final experience
-				</section>
+
+const Home = () =>
+	<article className="">
+		<Scene video={video} contentStyle={{
+			background: 'linear-gradient(#000, #000, 45deg)',
+			paddingTop: 'calc( 3em + 7vh )',
+			paddingBottom: '5vmin',
+		}}>
+			<div className='mr-auto'>
+				<h1 className='hero-head ma0 mb4 o-70' style={{
+					textShadow: '-.03em .03em .03em 3px #0005, 0 0 .1em 3px #0005',
+//					'-webkit-background-clip': 'text',
+//					backgroundClip: 'text',
+//					'-webkit-text-fill-color': 'transparent',
+//					color: 'transparent'
+				}}>
+					Build<span className="clr">. </span>
+					Race<span className="clr">. </span>
+					Win<span className="clr">. </span>
+				</h1>
 			</div>
-			<AppContext.Consumer>
-				{( {wallet, isConnected} ) => {
-					return <div className="fl w-100 w-30-ns">
-						{isConnected ?
-							<GameUI {...{wallet}} /> :
-							<div className='tr o-70'>
-								<svg xmlns="http://www.w3.org/2000/svg" className='h3 mr2' viewBox="0 0 320 512">
-									<path fill='currentcolor' d="M310.6 182.6c-12.51 12.51-32.76 12.49-45.25 0L192 109.3V480c0 17.69-14.31 32-32 32s-32-14.31-32-32V109.3L54.63 182.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l128-128c12.5-12.5 32.75-12.5 45.25 0l128 128C323.1 149.9 323.1 170.1 310.6 182.6z"/>
-								</svg>
-								<h3 className='fw2 f2 mt2'>Connect your wallet to continue.</h3>
-							</div>
-						}
-					</div>
-				}}
-			</AppContext.Consumer>
-		</div>
-	</div>
-</article>;
+			<h2 className='f-4 nb2 tracked mt-auto mr-auto w-100 hero-sub'>
+				<a href="" style={{fontSize: '1.4em'}} className="fr btn play-btn nt4">Play now</a>
+				Collect and assemble giant NFT robots
+				<span className='clr ma3 f-3'>&bull;</span>
+				Race in the XX branch universe
+				<span className='clr ma3 f-3'>&bull;</span>
+				Beat competitors and win cash prizes.
+				{/**
+				Race around the world
+				Collect NFTs
+				Build NFT robots
+				Compete with builder
+				Beat competitors. Win cash prizes
+				 */}
+			</h2>
+		</Scene>
+		<Scene>
+
+		</Scene>
+	</article>
+;
 
 export default Home;
