@@ -71,7 +71,7 @@ const partners = [
 
 export default function TeamScene() {
 	return <Scene id='team' bgChildren={''}>
-		<div className="flex flex-wrap flex-nowrap-ns mt6 pt5 relative w-100 mw9">
+		<div className="flex flex-wrap flex-nowrap-ns pt3 relative w-100 mw9">
 			<HugeBgText style={{top: 0}}>Team</HugeBgText>
 			<h2 className="scene-title pv4 pr5 tl-ns relative">Team</h2>
 			<div className="relative w-100">

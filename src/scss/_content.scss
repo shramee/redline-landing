@@ -1,6 +1,7 @@
 .scene {
 	width: 100vw;
 	position: relative;
+	overflow: hidden;
 	.content {
 		position: relative;
 		z-index: 1;
@@ -21,11 +22,17 @@
 	}
 }
 
-.bg-chart:after {
-	@include absolute-fill;
-	opacity: .13;
-	background: url( 'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/804d62119469157.609e0f716fd41.jpg' );
+.bg-chart{
+	&:after {
+		@include absolute-fill;
+		opacity: .13;
+		background: url('https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/804d62119469157.609e0f716fd41.jpg');
+	}
+	&.scene:after {
+		background-attachment: fixed;
+	}
 }
 
 @import './scenes/hero';
 @import './scenes/live-feed';
+@import './scenes/roadmap';

@@ -1,0 +1,41 @@
+.roadmap-wrap {
+	position: relative;
+	padding-left: 3em;
+}
+
+.roadmap-road {
+	background: #0005;
+	position: absolute;
+	display: block;
+	left: 0;
+	top: -25rem;
+	bottom: 0;
+	//transform: rotate(-30deg);
+}
+
+.roadmap-bots {
+	background: radial-gradient(rgba(103,130,190,.5), rgba(103,130,190,0) 70%);
+	height: 7em;
+	width: 7em;
+	margin-top: 0;
+	transition: all 2s;
+	&:not([data-in-view]) {
+		transform: translateY(0) !important;
+	}
+
+	img {
+		transform: rotate(110deg);
+	}
+}
+
+.roadmap-items {
+	transform: translate(-50%, -50%) rotate(-135deg);
+	padding-top: 4em;
+}
+
+.roadmap-item {
+	transform-origin: 0 0;
+	transform: rotate(135deg);
+	height: 7rem;
+	margin: 0;
+}
