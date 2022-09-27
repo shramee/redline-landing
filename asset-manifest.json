@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/redline-landing/static/css/main.f955da24.css",
-    "main.js": "/redline-landing/static/js/main.3cf11e30.js",
+    "main.js": "/redline-landing/static/js/main.6834822a.js",
     "static/js/787.1f475641.chunk.js": "/redline-landing/static/js/787.1f475641.chunk.js",
     "static/media/hero-bg.mp4": "/redline-landing/static/media/hero-bg.289fc89246094bd096c4.mp4",
     "static/media/lore.mp4": "/redline-landing/static/media/lore.07d29f595b48da8d924b.mp4",
@@ -32,11 +32,11 @@
     "static/media/youtube-brands.svg": "/redline-landing/static/media/youtube-brands.27012d6553f7ad10c2127a861173ad5f.svg",
     "static/media/tiktok-brands.svg": "/redline-landing/static/media/tiktok-brands.2e4d899eec4f4aecbfdf09399c2a8d0a.svg",
     "main.f955da24.css.map": "/redline-landing/static/css/main.f955da24.css.map",
-    "main.3cf11e30.js.map": "/redline-landing/static/js/main.3cf11e30.js.map",
+    "main.6834822a.js.map": "/redline-landing/static/js/main.6834822a.js.map",
     "787.1f475641.chunk.js.map": "/redline-landing/static/js/787.1f475641.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f955da24.css",
-    "static/js/main.3cf11e30.js"
+    "static/js/main.6834822a.js"
   ]
 }
