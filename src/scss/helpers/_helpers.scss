@@ -1,0 +1,79 @@
+@import './mixins';
+
+.scene-title,
+.text-bg {
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.scene-title {
+	display: inline-block;
+	background-image: linear-gradient(7deg, rgba(106, 158, 241) 25%, rgba(222, 252, 254) 75%);
+}
+
+.clr {
+	color: var(--accent);
+}
+
+.bg {
+	background: var(--bg);
+}
+
+.bg2 {
+	background: rgb(36, 56, 96);
+}
+
+.ma-auto {
+	margin: auto;
+}
+
+.mt-auto {
+	margin-top: auto;
+}
+
+.mb-auto {
+	margin-bottom: auto;
+}
+
+.dotted-buzzing-overlay,
+.dotted-overlay-after,
+.grid-overlay-after {
+	position: relative;
+	overflow: hidden;
+	&:after {
+		@include absolute-fill;
+	}
+}
+
+.dotted-overlay,
+.dotted-buzzing-overlay:after,
+.dotted-overlay-after:after {
+	background: center/10px 10px;
+	background-image: radial-gradient(rgb(51, 69, 103) 1px, rgb(11, 19, 37) 1px);
+}
+
+.dotted-buzzing-overlay:after {
+	left: -20%;
+	right: -20%;
+	//animation: 1s shakeX linear infinite both;
+	opacity: .3;
+}
+
+.grid-overlay,
+.grid-overlay-after:after {
+	background-size: 40px 40px;
+	background-image: linear-gradient(to right, grey 1px, transparent 1px),
+	linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+
+.overlay-dim:after {
+	opacity: .35;
+}
+
+video.bg {
+	@include absolute-fill;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

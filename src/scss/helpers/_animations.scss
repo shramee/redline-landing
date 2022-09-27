@@ -1,0 +1,84 @@
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translate3d(0,2rem,0)
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0,0,0)
+	}
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translate3d(-8rem,0,0)
+	}
+
+	to {
+		opacity: 1;
+		transform: translateZ(0)
+	}
+}
+
+@keyframes fadeInBig {
+	0% {
+		opacity: 0;
+		transform: scale(.2);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.anim, .anims {
+	position: relative;
+}
+.anim,
+.anims[data-in-view],
+.heading-anim[data-in-view]{
+	animation-duration: .7s;
+	animation-fill-mode: both;
+}
+
+.heading-anim[data-in-view] {
+	animation-name: fadeInLeft
+}
+
+.fadeInLeft {
+	animation-name: fadeInLeft
+}
+
+[data-in-view] .fadeInUp,
+.fadeInUp[data-in-view] {
+	animation-name: fadeInUp
+}
+
+.fadeInBig[data-in-view],
+[data-in-view] .fadeInBig{
+	animation: .5s fadeInBig
+}
+
+.animate__animated {
+	animation-duration: var(--animate-duration);
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both
+}
+
+@keyframes shakeX {
+
+	10%,30%,50%,70%,90% {
+		transform: translate3d(-.32rem,0,0)
+	}
+
+	0%, 20%,40%,60%,80%, 100% {
+		transform: translate3d(.32rem,0,0)
+	}
+}
+
+.shakeX {
+	animation: 1s shakeX infinite both;
+}
