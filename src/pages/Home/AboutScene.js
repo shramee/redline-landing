@@ -8,13 +8,6 @@ import loreVideo from "../../assets/lore.mp4";
 const snm = window.snm || new ScrollAndMouse();
 
 export default class AboutScene extends Component {
-	stagger( el ) {
-		if ( el ) {
-			this.staggerEl = el; // Cache stagger el
-		}
-		snm.staggerChildren( this.staggerEl, .5, .5 );
-	}
-
 	render() {
 		return <Scene id='about' className='overflow-hidden' contentStyle={{
 			background   : 'linear-gradient(#000, #000, 45deg)',

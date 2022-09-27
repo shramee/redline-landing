@@ -3,6 +3,7 @@ import RaceScene from './RaceScene';
 import AboutScene from './AboutScene';
 import FeatureScene from './FeatureScene';
 import TeamScene from './TeamScene';
+import RoadmapScene from './RoadmapScene';
 
 const Home = props =>
 	<article className="">
@@ -11,6 +12,7 @@ const Home = props =>
 		<AboutScene/>
 		<FeatureScene/>
 		<TeamScene/>
+		<RoadmapScene/>
 	</article>;
 
 export default Home;
