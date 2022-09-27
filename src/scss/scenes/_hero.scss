@@ -1,0 +1,10 @@
+.hero-head {
+	font-size: calc( 3rem + 3vmin );
+}
+
+.hero-sub {
+	font-size: calc( 1rem + .3vmin );
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

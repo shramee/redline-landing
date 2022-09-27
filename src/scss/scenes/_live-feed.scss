@@ -1,0 +1,39 @@
+@keyframes blink {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
+
+/* Minimal example */
+.live-blink {
+	animation: blink 2s infinite;
+	position: relative;
+}
+
+.race-track-image {
+	background-size: 100% !important;
+	overflow: hidden;
+	&, &:after, .absolute-btn {
+		transition: all .3s;
+	}
+	&:after {
+		opacity: 0.4;
+	}
+	.absolute-btn {
+		opacity: 0;
+		z-index: 2;
+		padding: 1em 1.6em;
+		white-space: nowrap;
+	}
+
+	&:hover {
+		background-size: 110% !important;
+		&:after {
+			background-size: 11px 11px;
+			opacity: 0.5;
+			//animation: .5s shakeX linear infinite both;
+		}
+		.absolute-btn {
+			opacity: 1;
+		}
+	}
+}

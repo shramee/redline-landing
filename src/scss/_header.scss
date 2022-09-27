@@ -1,6 +1,18 @@
+#site-header {
+	background: #000;
+
+}
 .logo {
-	padding-top: .5em;
-	margin-right: 1em;
+	margin: .5em 1em auto 0;
+	padding: 0;
+	video + a {
+		background: #000;
+		color: #fff;
+		mix-blend-mode: multiply;
+		user-select: none;
+		display: block;
+		margin-bottom: -2px;
+	}
 }
 
 .logo a {
