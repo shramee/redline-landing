@@ -1,6 +1,6 @@
 import WalletConnect from '../components/WalletConnect';
 import {Consumer} from "../app/AppContext";
-import liquidMetal from '../assets/liquid-metal.mp4';
+import logo from '../assets/redline-logo.png';
 
 const Header = () => {
 	const scrollTo = (e, id) => {
@@ -10,12 +10,15 @@ const Header = () => {
 	}
 	return <Consumer>
 		{( {setWallet} ) =>
-			<header id='site-header' className="dt w-100 flex border-box pa3 ph4-ns fixed absolute-fill z-5">
-				<h1 className="relative white f3 ma0 v-mid ttu logo" style={{letterSpacing: '.9em'}}>
+			<header id='site-header' className="dt w-100 pa3 ph4-ns flex border-box fixed absolute-fill z-5">
+				{/*<h1 className="relative white f3 ma0 v-mid ttu logo" style={{letterSpacing: '.9em'}}>
 					<video className='bg' src={liquidMetal} loop={true} autoPlay={true} muted={true}/>
 					<a className="no-underline" href="#" title="Home">
 						RedL<span style={{verticalAlign: '-1px', fontSize: '1.05em', color: '#f00'}}>i</span>ne
 					</a>
+				</h1>*/}
+				<h1 className="relative white f3 ma0 v-mid ttu logo" style={{letterSpacing: '.9em'}}>
+					<img className='w5' src={logo} alt='Redline' />
 				</h1>
 				<nav id='nav'>
 					<a onClick={e => scrollTo( e, 'about' )} href="#about">About</a>

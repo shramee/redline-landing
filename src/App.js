@@ -1,4 +1,5 @@
 import Header from './layout/Header'
+import Footer from './layout/Footer'
 import Home from './pages/Home'
 import AppContext from './app/AppContext';
 import {useEffect, useState} from "react";
@@ -15,6 +16,7 @@ function App() {
 			<div className="App min-vh-100 flex flex-column items-center w-100 near-white">
 				<Header/>
 				<Home/>
+				<Footer />
 			</div>
 		</AppContext.Provider>
 	);
