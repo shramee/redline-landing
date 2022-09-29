@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6a673e01.css",
-    "main.js": "/static/js/main.a2e582f1.js",
+    "main.css": "/static/css/main.ffbecbca.css",
+    "main.js": "/static/js/main.1137d838.js",
     "static/js/787.1f475641.chunk.js": "/static/js/787.1f475641.chunk.js",
     "static/media/hero-bg.webm": "/static/media/hero-bg.549375d853ed4c336784.webm",
     "static/media/lore.webm": "/static/media/lore.163d79710ec8cdfc423e.webm",
@@ -9,16 +9,17 @@
     "static/media/live-stream-screenshot.png": "/static/media/live-stream-screenshot.e171caac0d66828f921b.png",
     "static/media/city.png": "/static/media/city.c4609f763319c95bb22e.png",
     "static/media/empress.png": "/static/media/empress.791c4450083b250d2e7b.png",
-    "static/media/upgrade-tune.png": "/static/media/upgrade-tune.06d62ca1e71f2afee35e.png",
-    "static/media/robots.png": "/static/media/robots.3bbddabd56cac9d0a3a7.png",
+    "static/media/hero-bg-mobile.webp": "/static/media/hero-bg-mobile.c498d082c782ef4cb432.webp",
+    "static/media/robots.webp": "/static/media/robots.9ad738662c3cce82c622.webp",
     "static/media/David.png": "/static/media/David.ad98a2c4b0f8efd55099.png",
-    "static/media/around-the-world.jpeg": "/static/media/around-the-world.3568f4821449ecbcf01e.jpeg",
     "static/media/PA.png": "/static/media/PA.92a28b6cb7e28f7b97f8.png",
     "static/media/Shramee.png": "/static/media/Shramee.97abf5fba3f053031221.png",
     "static/media/Corentin.png": "/static/media/Corentin.e8e03c4e68b207bf708b.png",
     "static/media/Scott.png": "/static/media/Scott.9bddbec4553463ef82ee.png",
     "static/media/Alex.png": "/static/media/Alex.6dd18bc6ca79389843e7.png",
     "static/media/prizes.webp": "/static/media/prizes.a25d543dfb5b57aebca4.webp",
+    "static/media/around-the-world.webp": "/static/media/around-the-world.5c4c97f9bc8472ba2614.webp",
+    "static/media/upgrade-tune.webp": "/static/media/upgrade-tune.6c2f1c30ec231eeb091a.webp",
     "static/media/bg-chart.png": "/static/media/bg-chart.35032c1c543d91e1f3d0.png",
     "static/media/you.png": "/static/media/you.1f0498e43ad74c758aa9.png",
     "static/media/GoodTimesW00-Bold.woff2": "/static/media/GoodTimesW00-Bold.4ab6f782968140babaee.woff2",
@@ -33,12 +34,12 @@
     "index.html": "/index.html",
     "static/media/youtube-brands.svg": "/static/media/youtube-brands.27012d6553f7ad10c2127a861173ad5f.svg",
     "static/media/tiktok-brands.svg": "/static/media/tiktok-brands.2e4d899eec4f4aecbfdf09399c2a8d0a.svg",
-    "main.6a673e01.css.map": "/static/css/main.6a673e01.css.map",
-    "main.a2e582f1.js.map": "/static/js/main.a2e582f1.js.map",
+    "main.ffbecbca.css.map": "/static/css/main.ffbecbca.css.map",
+    "main.1137d838.js.map": "/static/js/main.1137d838.js.map",
     "787.1f475641.chunk.js.map": "/static/js/787.1f475641.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a673e01.css",
-    "static/js/main.a2e582f1.js"
+    "static/css/main.ffbecbca.css",
+    "static/js/main.1137d838.js"
   ]
 }
