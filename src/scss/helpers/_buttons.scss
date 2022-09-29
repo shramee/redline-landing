@@ -21,6 +21,9 @@
 	overflow: hidden;
 	position: relative;
 
+	&.db {
+		display: block;
+	}
 	&.btn-red {
 		background: #a00;
 		border: none;

@@ -143,14 +143,15 @@ export default class RaceScene extends Component {
 					</div>
 				</div>
 				<div className='relative z-1 mt5'>
-					<a href="//alpha.redline.game" className="btn fr">All races</a>
+
 					<h2 ref={el => snm.addScrollTarget( el )}
 							className='dib scene-title text-bg anims heading-anim'
 					>
 						Upcoming Races
 					</h2>
+					<a href="//alpha.redline.game" className="f6 copy-font btn fl fr-m mt3 mt0-m">All races</a>
 
-					<div className="races-wrap flex flex-wrap items-center mv3 nl3 nr3" ref={el => {
+					<div className="races-wrap flex flex-wrap items-center mv3 nl3 nr3 cb" ref={el => {
 						this.stagger( el );
 						snm.addScrollTarget( el )
 					}}>
@@ -159,7 +160,7 @@ export default class RaceScene extends Component {
 								return null;
 							}
 							const img = this.getTrackImage( race.track );
-							return <div key={i} className='w-50 w-33-m w-25-l o-70 anims fadeInUp'>
+							return <div key={i} className='w-100 w-50-m w-25-l o-70 anims fadeInUp'>
 								<div className="ma3 race pa2 bg br2">
 									<h3 style={{fontSize: '1.2rem'}} className='mb1 lh-solid ma1'>
 										<img className='v-mid w2 mr2 br1' src={this.getTrackCountryImage( race.track )}/>
