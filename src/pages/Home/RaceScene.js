@@ -23,6 +23,22 @@ export default class RaceScene extends Component {
 			coords     : '16°30′04″S 151°44′24″W',
 			cellCount  : '151',
 			cellLength : '100',
+		},
+		{
+			trackId    : 'namib',
+			name       : 'Namib Seaside',
+			countryCode: 'na',
+			coords     : '?',
+			cellCount  : '151',
+			cellLength : '100',
+		},
+		{
+			trackId    : 'yukon-peaks',
+			name       : 'Yukon Peaks',
+			countryCode: 'ca',
+			coords     : '?',
+			cellCount  : '151',
+			cellLength : '100',
 		}
 	];
 
@@ -61,7 +77,7 @@ export default class RaceScene extends Component {
 			},
 			{
 				raceId  : '23hjg37624sdawe',
-				trackId : 'bora-bora',
+				trackId : 'namib',
 				type    : 'regular',
 				time    : new Date( Date.now() + 800000 ),
 				entryFee: '0.25',
@@ -72,7 +88,7 @@ export default class RaceScene extends Component {
 			},
 			{
 				raceId  : '23hjg37624sdawe',
-				trackId : 'bora-bora',
+				trackId : 'yukon-peaks',
 				type    : 'regular',
 				time    : new Date( Date.now() + 1500000 ),
 				entryFee: '0.25',
@@ -83,7 +99,7 @@ export default class RaceScene extends Component {
 			},
 			{
 				raceId  : '23hjg37624sdawe',
-				trackId : 'bora-bora',
+				trackId : 'namib',
 				type    : 'regular',
 				time    : new Date( Date.now() + 2500000 ),
 				entryFee: '0.25',
@@ -111,9 +127,7 @@ export default class RaceScene extends Component {
 
 	render() {
 		const {races, tracks} = this.state;
-		return <Scene id='races' className='bg-chart' style={{
-			background: 'linear-gradient(80deg, rgb(2, 9, 24) 0%, rgb(36 56 96) 66%, rgb(9 29 71) 100%)',
-		}}>
+		return <Scene id='races' className='bg-chart'>
 			{/*{subHeading( {marginBottom: '-.4em'} )}*/}
 			<div className="w-100 w-80-l mw9">
 				<div className='relative z-1 mt5'>
@@ -123,9 +137,9 @@ export default class RaceScene extends Component {
 					</h2>
 					<div
 						className="aspect-ratio aspect-ratio--16x9 br2 overflow-hidden race-live-stream">
-						<img src={livestreamScreenShot} alt=""/>
-						{/*<iframe className="aspect-ratio--object cover" frameBorder="0" allowFullScreen scrolling="no"*/}
-						{/*				title='Live twitch feed' height="450" width="800" src={twitchURL}/>*/}
+						{/*<img className='aspect-ratio--object' src={livestreamScreenShot} alt=""/>*/}
+						<iframe className="aspect-ratio--object cover" frameBorder="0" allowFullScreen scrolling="no"
+										title='Live twitch feed' height="450" width="800" src={twitchURL}/>
 					</div>
 				</div>
 				<div className='relative z-1 mt5'>
@@ -158,7 +172,7 @@ export default class RaceScene extends Component {
 														d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z"/>
 										</svg>
 										<span style={{letterSpacing: '1px'}}>ETH</span>&nbsp;{race.prize.ether}</small>
-									<div className='cb br1 aspect-ratio--16x9 race-track-image dotted-buzzing-overlay'
+									<div className='cb br1 aspect-ratio--16x9 race-track-image dotted-overlay-after'
 											 style={{background: `center/cover url(${img})`}}>
 										<a href="//alpha.redline.game" className="btn nt4 absolute-btn ma-auto tracked">Join race</a>
 									</div>
