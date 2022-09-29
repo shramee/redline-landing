@@ -1,5 +1,9 @@
 #site-header {
 	background: #08101f;
+	transition: all .5s;
+	.top & {
+		background: transparent;
+	}
 }
 #site-footer {
 	background: #08101f;

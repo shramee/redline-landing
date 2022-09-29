@@ -5,7 +5,7 @@ import logo from '../assets/redline-logo.png';
 const Header = () => {
 	const scrollTo = (e, id) => {
 		e.preventDefault();
-		const element = document.getElementById( id );
+		const element = typeof id === 'string' ? document.getElementById( id ) : id;
 		element && element.scrollIntoView( {block: 'start', behavior: 'smooth'} );
 	}
 	return <Consumer>
@@ -18,13 +18,15 @@ const Header = () => {
 					</a>
 				</h1>*/}
 				<h1 className="relative white f3 ma0 v-mid ttu logo" style={{letterSpacing: '.9em'}}>
-					<img className='w5' src={logo} alt='Redline' />
+					<a href="#" onClick={e => scrollTo( e, document.body )}>
+						<img className='w5' src={logo} alt='Redline' />
+					</a>
 				</h1>
 				<nav id='nav'>
 					<a onClick={e => scrollTo( e, 'about' )} href="#about">About</a>
 					<a onClick={e => scrollTo( e, 'features' )} href="#features">Features</a>
 					<a onClick={e => scrollTo( e, 'team' )} href="#team">Team</a>
-					<a onClick={e => scrollTo( e, 'roadmap' )} href="#roadmap">Road map</a>
+					<a onClick={e => scrollTo( e, 'roadmap' )} href="#roadmap">Roadmap</a>
 					<a className='play-btn btn' href="//alpha.redline.game"><span>Play Now</span></a>
 				</nav>
 			</header>
