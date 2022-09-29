@@ -19,29 +19,31 @@ export default class HeroScene extends Component {
 			paddingTop   : 'calc( 3em + 7vh )',
 			paddingBottom: '5vmin',
 		}}>
-			<div className='mr-auto'>
+			<div className='mr-auto f3 f5-l'>
 				<h1 className='hero-head ma0 mb4 o-70' style={{
-					textShadow: '-.03em .03em .03em #0005, 0 0 .3em #0005',
+					textShadow: '-.03em .03em .03em #0004, 0 0 .3em #0005',
 //								boxShadow: '1px 1px 25px 2px #000',
 //					'-webkit-background-clip': 'text',
 //					backgroundClip: 'text',
 //					'-webkit-text-fill-color': 'transparent',
 //					color: 'transparent'
 				}}>
-					Build<span className="clr">. </span>
-					Race<span className="clr">. </span>
-					Win<span className="clr">. </span>
+					<span className="db dib-l">Build<span className="clr">.&nbsp;</span></span>
+					<span className="db dib-l">Race<span className="clr">.&nbsp;</span></span>
+					<span className="db dib-l">Win<span className="clr">.&nbsp;</span></span>
 				</h1>
 			</div>
-			<h2 className='f-4 nb2 tracked mt-auto mr-auto w-100 hero-sub'>
-				<div className='dib' ref={el => this.stagger( el ) }>
-					<span className="dib anim fadeInUp">Collect and assemble giant NFT robots</span>
-					<span className='dib anim fadeInBig clr ma3 f-3'>&bull;</span>
-					<span className="dib anim fadeInUp">Race in the XX branch universe</span>
-					<span className='dib anim fadeInBig clr ma3 f-3'>&bull;</span>
-					<span className="dib anim fadeInUp">Beat competitors and win cash prizes.</span>
+			<h2 className='f-4 nb2 tracked-l mt-auto mr-auto w-100 hero-sub flex-l items-center justify-between'>
+				<div className='db dib-l tc-m' ref={el => this.stagger( el ) } style={{
+					textShadow: '0 0 .3em #0005',
+				}}>
+					<span className="db dib-ns mb3 mb0-l anim fadeInUp">Collect and assemble giant NFT robots</span>
+					<span className='dn dib-ns anim fadeInBig clr ma3 f-3'>&bull;</span>
+					<span className="db dib-ns mb3 mb0-l anim fadeInUp">Race in the XX branch universe</span>
+					<span className='dn dib-l anim fadeInBig clr ma3 f-3'>&bull;</span>
+					<span className="db dib-l mb3 mb0-l anim fadeInUp">Beat competitors and win cash prizes.</span>
 				</div>
-				<a href="//alpha.redline.game" style={{fontSize: '1.4em'}} className="btn play-btn nt4">Play now</a>
+				<a href="//alpha.redline.game" style={{minWidth: '8.2em'}} className="f3-l tc tl-l w-100 w-auto-l btn play-btn mt3 nt4-l">Play now</a>
 				{/**
 				Race around the world
 				Collect NFTs
