@@ -14,7 +14,7 @@ export default class HeroScene extends Component {
 	}
 
 	render() {
-		return <Scene id='hero' className='dotted-buzzing-overlay' video={video} contentStyle={{
+		return <Scene id='hero' className='dotted-overlay-after' video={video} contentStyle={{
 			background   : 'linear-gradient(#000, #000, 45deg)',
 			paddingTop   : 'calc( 3em + 7vh )',
 			paddingBottom: '5vmin',

@@ -16,7 +16,6 @@
 		transition: all .3s;
 	}
 	&:after {
-		opacity: 0.4;
 	}
 	.absolute-btn {
 		opacity: 0;
@@ -29,7 +28,7 @@
 		background-size: 110% !important;
 		&:after {
 			background-size: 11px 11px;
-			opacity: 0.5;
+			opacity: 0.8;
 			//animation: .5s shakeX linear infinite both;
 		}
 		.absolute-btn {

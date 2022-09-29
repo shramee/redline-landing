@@ -50,13 +50,13 @@
 .dotted-buzzing-overlay:after,
 .dotted-overlay-after:after {
 	background: center/10px 10px;
-	background-image: radial-gradient(rgb(51, 69, 103) 1px, rgb(11, 19, 37) 1px);
+	background-image: radial-gradient(rgba(255, 255, 255, .07) 1px, rgba(0,0,0,0.1) 1px);
 }
 
 .dotted-buzzing-overlay:after {
 	left: -20%;
 	right: -20%;
-	//animation: 1s shakeX linear infinite both;
+	animation: 1s shakeX linear infinite both;
 	opacity: .3;
 }
 
