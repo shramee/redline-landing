@@ -32,7 +32,8 @@ export default class AboutScene extends Component {
 							The game is fully on chain so the distribution of prizes is trustless and transparent.
 							{/*Six robots race on a tracks opening a plethora of terrain based optimisation opportunities.*/}
 						</p>
-						<a href="//alpha.redline.game" className="btn btn-red f3 mt4" style={{textTransform:'none'}}>Get free NFT starter pack</a>
+						<a href="//alpha.redline.game" className="btn btn-red f3-l f5 mt4" style={{textTransform:'none'}}>
+							Get free NFT starter pack</a>
 					</>}
 				/>
 			</div>
