@@ -5,37 +5,51 @@ import robotsImg from '../../assets/features/robots.png';
 
 const snm = window.snm || new ScrollAndMouse();
 
-const progress = 0;
-
+const progress = 1;
+const itemHeight = 8;
 const items = [
-	<span>Alpha Playtesting</span>,
-	<span>Backend account handling and direct fiat</span>,
-	<span>Sponsor System</span>,
-	<span>Advanced racing systems & content</span>,
-	<span>Animation overhaul</span>,
-	<span>StarkNet Mainnet Release</span>,
-	<span>Platform expansion: webgl, mobile, other', 'blockchain bridges</span>,
-	<span>Robot parts 2nd edition</span>,
-	<span>Betting system</span>,
-	<span>Future: new games in the Redline universe</span>,
+	[
+		<span>Proof of concept</span>,
+		<small className='db o-60 f5'>StrakNet &amp; Unreal integration</small>
+	],
+	[<span>Alpha Playtesting</span>,],
+	[<span>Backend account handling and direct fiat</span>,],
+	[<span>Sponsor System</span>, <small className='db o-60 f5'>Fully on chain and peer reviewed</small>],
+	[<span>Advanced racing systems & content</span>,],
+	[<span>Animation overhaul</span>,],
+	[<span>StarkNet Mainnet Release</span>, '', 'roadmap-item-big'],
+	[
+		<span>Platform expansion: </span>,
+		<small className='db o-60 f5'>Webgl, mobile, other blockchain bridges</small>
+	],
+	[<span>Robot parts 2nd edition</span>,],
+	[<span>Betting system</span>,],
+	[<span>Future: </span>, <small className='db o-60 f5'>New games in the Redline universe</small>],
 ];
 
 export default function AboutScene() {
-	const progressMarker = <span className="dib br-pill bg-dark-green ph3 pb1">In progress</span>;
-	return <Scene id='roadmap' className='overflow-hidden bg-chart' style={{
-		background: 'linear-gradient(-80deg, rgb(2, 9, 24) 0%, rgb(28, 45, 77) 66%, rgb(9, 29, 71) 100%)',
-	}} bgChildren={''}>
-		<div className="w-100 w-80-l mw9">
+	const progressMarker = <span className="ml2 dib bg-dark-green br2 dib f6 lh-solid pa2 ttu v-mid">In progress</span>;
+	const finishedMarker = <span className="ml2 dib bg-dark-blue br2 dib f6 lh-solid pa2 ttu v-mid">Done</span>;
+	return <Scene id='roadmap' className='overflow-hidden bg-chart' bgChildren={''}>
+		<div ref={el => snm.addScrollTarget( el )} className="w-100 w-80-l mw9">
 			<h2 ref={el => snm.addScrollTarget( el )} className="scene-title anims heading-anim mb4 pt5">Roadmap</h2>
-			<div className="roadmap-wrap nt5">
+			<div className="roadmap-wrap">
 				<div className="roadmap-items">
 					<div className="roadmap-road">
 						<div ref={el => snm.addScrollTarget( el )} className="roadmap-bots" style={{
-							transform: `translateY(${25 + progress * 7}rem)`}}>
+							transform: `translateY(${999 + progress * itemHeight}rem)`
+						}}>
 							<img className='' src={robotsImg} alt="Robots"/>
 						</div>
 					</div>
-					{items.map( ( item, i ) => <p className='roadmap-item'>{item} {progress === i && progressMarker}</p> )}
+					{items.map( ( [head, desc, className], i ) => <p className={`roadmap-item ${className}`} style={{height: itemHeight + 'rem'}}>
+						<span className='db'>
+							{head}
+							{progress === i && progressMarker}
+							{progress > i && finishedMarker}
+						</span>
+						{desc}
+					</p> )}
 				</div>
 			</div>
 		</div>

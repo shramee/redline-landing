@@ -1,6 +1,8 @@
 .roadmap-wrap {
 	position: relative;
-	padding-left: 3em;
+	padding-left: 0 3em;
+	--rotate: 135deg;
+	--itemBulletOffset: 135deg;
 }
 
 .roadmap-road {
@@ -8,19 +10,22 @@
 	position: absolute;
 	display: block;
 	left: 0;
-	top: -25rem;
-	bottom: 0;
+	top: -999rem;
+	bottom: -999rem;
 	//transform: rotate(-30deg);
 }
 
 .roadmap-bots {
-	background: radial-gradient(rgba(103,130,190,.5), rgba(103,130,190,0) 70%);
+	position: relative;
+	z-index: 2;
+	background: radial-gradient(rgba(103, 130, 190, .3), rgba(103, 130, 190, 0) 70%);
 	height: 7em;
 	width: 7em;
-	margin-top: 0;
+	margin-top: -2.5rem;
 	transition: all 2s;
+
 	&:not([data-in-view]) {
-		transform: translateY(0) !important;
+		transform: translateY(990rem) !important;
 	}
 
 	img {
@@ -29,13 +34,53 @@
 }
 
 .roadmap-items {
-	transform: translate(-50%, -50%) rotate(-135deg);
+	transform-origin: 0 0;
+	transform: translateY(80%) rotate(calc(-1 * var(--rotate)));
 	padding-top: 4em;
 }
 
 .roadmap-item {
+	box-sizing: border-box;
 	transform-origin: 0 0;
-	transform: rotate(135deg);
-	height: 7rem;
+	transform: rotate(var(--rotate));
 	margin: 0;
+	position: relative;
+	padding-left: 1rem;
+
+	&:before, &:after {
+		content: '';
+		border: 5px solid white;
+		border-radius: 50%;
+		width: 0;
+		display: inline-block;
+		position: absolute;
+		top: .8rem;
+		left: -6.3rem;
+		opacity: .2;
+		font-size: 3rem;
+		line-height: 1rem;
+	}
+
+	&.roadmap-item-big:before {
+		box-shadow: 0 0 0 6px #000, 0 0 0 7px #fff;
+	}
+
+	&:after {
+		border-radius: 0;
+		margin: 5px 0 0 10px;
+		width: 6rem;
+		border: none;
+		border-top: 1px solid white;
+	}
 }
+
+//@media screen and (max-width: 100rem) {
+	.roadmap-wrap {
+		padding: 0 0 0 5rem;
+		transform: translateX(8rem) translateX(calc( -120rem + 100vw + 160rem * var(--scroll) - 125vw * var(--scroll) ));
+	}
+
+	.roadmap-items {
+	}
+
+//}
