@@ -149,7 +149,7 @@ export default class RaceScene extends Component {
 					>
 						Upcoming Races
 					</h2>
-					<a href="//alpha.redline.game" className="f6 copy-font btn fl fr-m mt3 mt0-m">All races</a>
+					<a href="//alpha.redline.game" className="f6 copy-font btn fl fr-ns mt3 mt0-ns">All races</a>
 
 					<div className="races-wrap flex flex-wrap items-center mv3 nl3 nr3 cb" ref={el => {
 						this.stagger( el );
