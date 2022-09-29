@@ -17,12 +17,12 @@ const Header = () => {
 						RedL<span style={{verticalAlign: '-1px', fontSize: '1.05em', color: '#f00'}}>i</span>ne
 					</a>
 				</h1>*/}
-				<h1 className="relative white f3 ma0 v-mid ttu logo" style={{letterSpacing: '.9em'}}>
+				<h1 className="relative white f3 v-mid ttu logo mr3-l pr2-l mt2 pt1 mb-auto ml0" style={{letterSpacing: '.9em'}}>
 					<a href="#" onClick={e => scrollTo( e, document.body )}>
-						<img className='w5' src={logo} alt='Redline' />
+						<img className='w-100 w5-l' src={logo} alt='Redline' />
 					</a>
 				</h1>
-				<nav id='nav'>
+				<nav id='nav' className='dn flex-l'>
 					<a onClick={e => scrollTo( e, 'about' )} href="#about">About</a>
 					<a onClick={e => scrollTo( e, 'features' )} href="#features">Features</a>
 					<a onClick={e => scrollTo( e, 'team' )} href="#team">Team</a>
