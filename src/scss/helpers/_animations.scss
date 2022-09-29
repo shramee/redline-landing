@@ -1,3 +1,11 @@
+@keyframes kenBurns {
+	0% {
+		transform: scale( 1 );
+	}
+	to {
+		transform: scale( 1.2 );
+	}
+}
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;
@@ -81,4 +89,18 @@
 
 .shakeX {
 	animation: 1s shakeX infinite both;
+}
+
+.ken-burns {
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 42.85%;
+}
+
+.ken-burns-img {
+	@include absolute-fill;
+	//transform-origin: bottom left;
+	position: absolute;
+	background: center/cover;
+	animation: 25s kenBurns linear infinite alternate both;
 }
