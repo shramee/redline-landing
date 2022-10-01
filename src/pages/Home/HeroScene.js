@@ -1,6 +1,8 @@
 import {Component} from "react";
 import Scene from "../../components/Scene";
-import video from "../../assets/hero-bg.mp4";
+import video from "../../assets/hero-bg.webm";
+import videoMP4 from "../../assets/hero-bg.mp4";
+import mobileBG from "../../assets/hero-bg-mobile.webp";
 
 import ScrollAndMouse from "../../services/scrollAndMouse";
 const snm = window.snm || new ScrollAndMouse();
@@ -14,7 +16,13 @@ export default class HeroScene extends Component {
 	}
 
 	render() {
-		return <Scene id='hero' className='dotted-overlay-after' video={video} contentStyle={{
+		return <Scene id='hero' className='dotted-overlay-after' bgChildren={<>
+			<video className='bg absolute absolute--fill' loop autoPlay muted playsInline>
+				<source src={video} type="video/webm" />
+				<source src={videoMP4} type="video/mp4" />
+			</video>
+			{/*<div className='db dn-l bg absolute absolute--fill' style={{background: `center/cover url(${mobileBG})`}} />*/}
+		</>} contentStyle={{
 			background   : 'linear-gradient(#000, #000, 45deg)',
 			paddingTop   : 'calc( 3em + 7vh )',
 			paddingBottom: '5vmin',

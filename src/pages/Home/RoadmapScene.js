@@ -1,7 +1,7 @@
 import {Component} from "react";
 import Scene from "../../components/Scene";
 import ScrollAndMouse from "../../services/scrollAndMouse";
-import robotsImg from '../../assets/features/robots.png';
+import robotsImg from '../../assets/features/robots.webp';
 
 const snm = window.snm || new ScrollAndMouse();
 
@@ -27,7 +27,7 @@ const items = [
 	[<span>Future: </span>, <small className='db o-60 f5'>New games in the Redline universe</small>],
 ];
 
-export default function AboutScene() {
+export default function RoadmapScene() {
 	const progressMarker = <span className="ml2 dib bg-dark-green br2 dib f6 lh-solid pa2 ttu v-mid">In progress</span>;
 	const finishedMarker = <span className="ml2 dib bg-dark-blue br2 dib f6 lh-solid pa2 ttu v-mid">Done</span>;
 	return <Scene id='roadmap' className='overflow-hidden bg-chart' bgChildren={''}>
@@ -42,7 +42,7 @@ export default function AboutScene() {
 							<img className='' src={robotsImg} alt="Robots"/>
 						</div>
 					</div>
-					{items.map( ( [head, desc, className], i ) => <p className={`roadmap-item ${className}`} style={{height: itemHeight + 'rem'}}>
+					{items.map( ( [head, desc, className], i ) => <p key={i} className={`roadmap-item ${className}`} style={{height: itemHeight + 'rem'}}>
 						<span className='db'>
 							{head}
 							{progress === i && progressMarker}
