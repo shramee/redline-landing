@@ -3,11 +3,12 @@ import Scene from "../../components/Scene";
 import HugeBgText from '../../components/HugeBgText';
 import ScrollAndMouse from "../../services/scrollAndMouse";
 import TwoColumnLayout from '../../components/TwoColumnLayout';
-import weatherVideo from '../../assets/features/weather.mp4';
-import aroundTheWorldImg from '../../assets/features/around-the-world.jpeg';
-import robotsImg from '../../assets/features/robots.png';
+import weatherVideo from '../../assets/features/weather.webm';
+import weatherVideoMP4 from '../../assets/features/weather.mp4';
+import aroundTheWorldImg from '../../assets/features/around-the-world.webp';
+import robotsImg from '../../assets/features/robots.webp';
 import prizesImg from '../../assets/features/prizes.webp';
-import updateTuneImg from '../../assets/features/upgrade-tune.png';
+import updateTuneImg from '../../assets/features/upgrade-tune.webp';
 
 const snm = window.snm || new ScrollAndMouse();
 
@@ -35,8 +36,9 @@ export default class FeatureScene extends Component {
 							Kaisokus are racing robots inspired by living organisms and perfected by high tech engineering. They are
 							self driving and usually composed of 11 parts.
 						</p>
-							<p className='measure lh-copy'>
-							Kaisokus are the fastest mechas in the world, owing to material engineering breakthroughs and feirce competition to push
+						<p className='measure lh-copy'>
+							Kaisokus are the fastest mechas in the world, owing to material engineering breakthroughs and feirce
+							competition to push
 							the limits.
 						</p>
 					</>}
@@ -44,14 +46,8 @@ export default class FeatureScene extends Component {
 
 				<TwoColumnLayout
 					flip={true}
-					visual={
-						<img className='br3 fadeInUp anim-d' src={aroundTheWorldImg} alt='Race around the world'
-								 style={{
-//									 transformOrigin: '100% 0',
-//									 opacity: 'calc(1 - var(--scroll-low))',
-//									 transform: 'scale(calc(1 - var(--scroll-low))) rotate(calc(-120deg * var(--scroll-low)))',
-								 }}
-						/>}
+					visual={<div className='frame fadeInUp anim-d'>
+						<img src={aroundTheWorldImg} alt='Race around the world'/></div>}
 					content={<>
 						<h2 ref={el => snm.addScrollTarget( el )} className="scene-title mb4">
 							Race around the world
@@ -64,11 +60,8 @@ export default class FeatureScene extends Component {
 				/>
 
 				<TwoColumnLayout
-					visual={<div className='bg-black-30 br3 fadeInUp anim-d' style={{
-//						opacity: 'calc(1 - var(--scroll-low))',
-//						transform: 'scale(calc(1 - var(--scroll-low)))'
-					}}>
-						<img className='db br3' src={updateTuneImg} alt='Race around the world'/>
+					visual={<div className='frame fadeInUp anim-d'>
+						<img className='o-80' src={updateTuneImg} alt='Race around the world'/>
 					</div>}
 					content={<>
 						<h2 ref={el => snm.addScrollTarget( el )} className="scene-title mb4">
@@ -84,32 +77,35 @@ export default class FeatureScene extends Component {
 
 				<TwoColumnLayout
 					flip={true}
-					visual={<img className='db br3 fadeInUp anim-d' src={prizesImg} alt='Race around the world' style={{
-						opacity: 'calc(1 - var(--scroll-low))',
-						transform: 'scale(calc(1 - var(--scroll-low)))'
-					}}/>}
+					visual={<div className='frame fadeInUp anim-d'>
+							<img src={prizesImg} alt='Race around the world'/></div>}
 					content={<>
 						<h2 ref={el => snm.addScrollTarget( el )} className="scene-title mb4">
 							Prizes
 						</h2>
 						<p className='measure lh-copy'>
 							When you win Redline races you get new rare robot parts and skins.
-							More challenging tournaments include cash prizes, trustlessly paid out in Ether or DAI by the smart contract.
+							More challenging tournaments include cash prizes, trustlessly paid out in Ether or DAI by the smart
+							contract.
 						</p>
 					</>}
 				/>
 
 				<TwoColumnLayout
-					videoUrl={weatherVideo}
-					visualClass='fadeInUp anim-d'
-//					visualStyle={{opacity: 'calc(1 - var(--scroll-low))', transform: 'scale(calc(1 - var(--scroll-low)))'}}
+					visual={<div className='frame fadeInUp anim-d'>
+						<video muted autoPlay loop playsInline>
+							<source src={weatherVideo} type="video/webm" />
+							<source src={weatherVideoMP4} type="video/mp4" />
+						</video>
+					</div>}
 					content={<>
 						<h2 ref={el => snm.addScrollTarget( el )} className="scene-title mb4">
 							Unpredictable weather
 						</h2>
 						<p className='measure lh-copy'>
 							An unusual phenomenon makes the weather shared between the two timelines.
-							When it rains where you are, it rains there in the XX branch too. The racetracks and Kaisoku are affected by the weather, so make sure to
+							When it rains where you are, it rains there in the XX branch too. The racetracks and Kaisoku are affected
+							by the weather, so make sure to
 							check the forecast before a race.
 						</p>
 					</>}

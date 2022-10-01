@@ -1,5 +1,43 @@
 @import './mixins';
 
+.frame {
+	$radius: 1px;
+	padding: 11px;
+	position: relative;
+	&:after, &:before {
+		border: 2px solid white;
+		bottom: 0;
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 5%;
+		opacity: .3;
+	}
+
+	&:after {
+		border-left: none;
+		border-top-right-radius: $radius;
+		border-bottom-right-radius: $radius;
+		right: 0;
+	}
+
+	&:before {
+		border-top-left-radius: $radius;
+		border-bottom-left-radius: $radius;
+		border-right: none;
+		left: 0;
+	}
+	img, video {
+		border-radius: 0;
+		display: block;
+		width: 100%;
+	}
+}
+
+video {
+	background: #000;
+}
+
 .scene-title,
 .text-bg {
 	background-clip: text;
@@ -76,4 +114,7 @@ video.bg {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	&.dn {
+		display: none;
+	}
 }

@@ -3,8 +3,8 @@ export default function Scene( {contentStyle, bgChildren, children, video, ...re
 	restProps.className += ' scene';
 	return <div {...restProps}>
 		{bgChildren}
-		{video && <video className='bg absolute absolute--fill' src={video} loop={true} autoPlay={true} muted={true}>
-			Sorry your browser doesn't support HTML5 video.
+		{video && <video className='bg absolute absolute--fill' loop autoPlay muted playsInline>
+			<source src={video} type="video/webm" />
 		</video>}
 		<div className="content pa3 pt5 pb4 ph4-ns" style={contentStyle}>
 			{children}
