@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fdd6449f.css",
-    "main.js": "/static/js/main.36450c06.js",
+    "main.css": "/static/css/main.a2495577.css",
+    "main.js": "/static/js/main.000352f5.js",
     "static/js/787.1f475641.chunk.js": "/static/js/787.1f475641.chunk.js",
     "static/media/hero-bg.mp4": "/static/media/hero-bg.289fc89246094bd096c4.mp4",
     "static/media/hero-bg.webm": "/static/media/hero-bg.549375d853ed4c336784.webm",
@@ -10,8 +10,6 @@
     "static/media/weather.mp4": "/static/media/weather.ed87b1f9230147fffadf.mp4",
     "static/media/weather.webm": "/static/media/weather.4996a18e11f5da7d71c1.webm",
     "static/media/live-stream-screenshot.png": "/static/media/live-stream-screenshot.e171caac0d66828f921b.png",
-    "static/media/city.png": "/static/media/city.c4609f763319c95bb22e.png",
-    "static/media/empress.png": "/static/media/empress.791c4450083b250d2e7b.png",
     "static/media/hero-bg-mobile.webp": "/static/media/hero-bg-mobile.c498d082c782ef4cb432.webp",
     "static/media/robots.webp": "/static/media/robots.9ad738662c3cce82c622.webp",
     "static/media/David.png": "/static/media/David.ad98a2c4b0f8efd55099.png",
@@ -37,12 +35,12 @@
     "index.html": "/index.html",
     "static/media/youtube-brands.svg": "/static/media/youtube-brands.27012d6553f7ad10c2127a861173ad5f.svg",
     "static/media/tiktok-brands.svg": "/static/media/tiktok-brands.2e4d899eec4f4aecbfdf09399c2a8d0a.svg",
-    "main.fdd6449f.css.map": "/static/css/main.fdd6449f.css.map",
-    "main.36450c06.js.map": "/static/js/main.36450c06.js.map",
+    "main.a2495577.css.map": "/static/css/main.a2495577.css.map",
+    "main.000352f5.js.map": "/static/js/main.000352f5.js.map",
     "787.1f475641.chunk.js.map": "/static/js/787.1f475641.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdd6449f.css",
-    "static/js/main.36450c06.js"
+    "static/css/main.a2495577.css",
+    "static/js/main.000352f5.js"
   ]
 }
