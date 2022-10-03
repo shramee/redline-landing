@@ -11,7 +11,7 @@ class App extends Component {
 	componentDidMount() {
 		document.body.classList.add( 'top' );
 		window.addEventListener( 'scroll', function() {
-			if ( window.scrollY < 50 ) {
+			if ( window.scrollY < .5 * window.innerHeight ) {
 				document.body.classList.add( 'top' )
 			} else {
 				document.body.classList.remove( 'top' )

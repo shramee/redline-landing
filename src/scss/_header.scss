@@ -1,8 +1,12 @@
 #site-header {
 	background: #08101f;
-	transition: all .5s;
+	position: fixed;
 	.top & {
+		position: absolute;
 		background: transparent;
+		.play-btn {
+			opacity: 0;
+		}
 	}
 }
 #site-footer {

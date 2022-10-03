@@ -9,8 +9,10 @@ const Header = () => {
 	}
 	return <Consumer>
 		{( {setWallet} ) =>
-			<header id='site-header' className="dt w-100 pa3 ph4-ns flex border-box fixed absolute-fill z-5">
-				<h1 className="relative white f3 v-mid ttu logo mr3-l pr2-l mt2 pt1 mb-auto ml0" style={{letterSpacing: '.9em'}}>
+			<header
+				style={{backgroundImage: 'linear-gradient(#0004, #0004, #0003, #0000)'}}
+				id='site-header' className="dt w-100 pa3 ph4-ns flex border-box absolute absolute-fill z-5">
+				<h1 className="relative white f3 v-mid ttu logo mr4-l pr2-l mt2 pt1 mb-auto ml0" style={{letterSpacing: '.9em'}}>
 					<a href="#" onClick={e => scrollTo( e, document.body )}>
 						<img className='w-100 w5-l' src={logo} alt='Redline' />
 					</a>
