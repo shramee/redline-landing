@@ -12,8 +12,6 @@ export default class AboutScene extends Component {
 	render() {
 		return <Scene id='about' className='overflow-hidden' contentStyle={{
 			background   : 'linear-gradient(#000, #000, 45deg)',
-			paddingTop   : 'calc( 3em + 7vh )',
-			paddingBottom: '5vmin',
 		}} bgChildren={<HugeBgText>ABOUT</HugeBgText>}>
 			<div className="w-100 w-80-l mw9">
 				<TwoColumnLayout

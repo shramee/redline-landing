@@ -44,6 +44,8 @@ export default class FeatureScene extends Component {
 					</>}
 				/>
 
+				<div className="pv5"></div>
+
 				<TwoColumnLayout
 					flip={true}
 					visual={<div className='frame fadeInUp anim-d'>
@@ -58,6 +60,8 @@ export default class FeatureScene extends Component {
 						</p>
 					</>}
 				/>
+
+				<div className="pv5"></div>
 
 				<TwoColumnLayout
 					visual={<div className='frame fadeInUp anim-d'>
@@ -75,6 +79,8 @@ export default class FeatureScene extends Component {
 					</>}
 				/>
 
+				<div className="pv5"></div>
+
 				<TwoColumnLayout
 					flip={true}
 					visual={<div className='frame fadeInUp anim-d'>
@@ -90,6 +96,8 @@ export default class FeatureScene extends Component {
 						</p>
 					</>}
 				/>
+
+				<div className="pv5"></div>
 
 				<TwoColumnLayout
 					visual={<div className='frame fadeInUp anim-d'>

@@ -86,7 +86,7 @@ export default function TeamScene() {
 		<HugeBgText scrollTarget>Team</HugeBgText>
 		{/*<HugeBgText style={{top: 0}}>Partners</HugeBgText>*/}
 		<div className="pt3 relative w-100 mw9 tc">
-			<h2 ref={el => snm.addScrollTarget( el )} className="scene-title heading-anim pv4 pr5 tl-ns relative">Team</h2>
+			<h2 ref={el => snm.addScrollTarget( el )} className="scene-title heading-anim pr5 tl-ns relative">Team</h2>
 			<div ref={el => staggerAnimate( el )} className="relative w-100 mw8 center">
 				{team.map( ( {link, img, name, position}, i) => <article key={i} className="dib v-top w-100 w-50-m w-25-l br3 pa3 mw5 mv3 border-box fadeInUp">
 					<div className="">
@@ -100,7 +100,7 @@ export default function TeamScene() {
 			</div>
 		</div>
 		<div className="mt6 pt5 relative w-100 mw9 tc">
-			<h2 ref={el => snm.addScrollTarget( el )} className="scene-title heading-anim pv4 pr4 tl-ns relative">Partners</h2>
+			<h2 ref={el => snm.addScrollTarget( el )} className="scene-title heading-anim pr4 tl-ns relative">Partners</h2>
 			<div ref={el => staggerAnimate( el )} className="relative f5 o-70">
 				{partners.map( ([partner, img], i) =>
 						<img key={i} src={img} className={`br2 mh4-l h4 pt5 dib ph4 pb3 border-box fadeInUp ${partner === 'yagi' && 'pb4'}`} alt={partner} /> )}

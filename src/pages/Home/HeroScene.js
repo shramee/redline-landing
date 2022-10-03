@@ -16,16 +16,15 @@ export default class HeroScene extends Component {
 	}
 
 	render() {
-		return <Scene id='hero' className='dotted-overlay-after' bgChildren={<>
+		return <Scene id='hero' className=' dotted-overlay-after' bgChildren={<>
 			<video className='bg absolute absolute--fill' loop autoPlay muted playsInline>
 				<source src={video} type="video/webm" />
 				<source src={videoMP4} type="video/mp4" />
 			</video>
 			{/*<div className='db dn-l bg absolute absolute--fill' style={{background: `center/cover url(${mobileBG})`}} />*/}
 		</>} contentStyle={{
+			minHeight: '100vh',
 			background   : 'linear-gradient(#000, #000, 45deg)',
-			paddingTop   : 'calc( 3em + 7vh )',
-			paddingBottom: '5vmin',
 		}}>
 			<div className='mr-auto f3 f5-l'>
 				<h1 className='hero-head ma0 mb4 o-70' style={{
