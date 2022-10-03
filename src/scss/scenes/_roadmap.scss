@@ -1,6 +1,8 @@
 .roadmap-wrap {
 	position: relative;
-	padding-left: 0 3em;
+	margin-top: -8em;
+	margin-bottom: -8em;
+	//padding-top: 3vh;
 	--rotate: 135deg;
 	--itemBulletOffset: 135deg;
 }
@@ -21,7 +23,6 @@
 	background: radial-gradient(rgba(103, 130, 190, .3), rgba(103, 130, 190, 0) 70%);
 	height: 7em;
 	width: 7em;
-	margin-top: -2.5rem;
 	transition: all 2s;
 
 	&:not([data-in-view]) {
@@ -36,7 +37,6 @@
 .roadmap-items {
 	transform-origin: 0 0;
 	transform: translateY(80%) rotate(calc(-1 * var(--rotate)));
-	padding-top: 4em;
 }
 
 .roadmap-item {
